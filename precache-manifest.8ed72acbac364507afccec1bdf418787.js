@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "242ca874838af7dfb3fda9ad3ccdc2a5",
+    "revision": "6b501fbe5799ac25c9ee6fb071b3fd33",
     "url": "/react-reward-store/index.html"
   },
   {
