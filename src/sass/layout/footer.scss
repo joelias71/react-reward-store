@@ -1,0 +1,14 @@
+div.footer {
+    position: sticky;
+    width: 100%;
+    background-color: $color-blue-dark;
+    color: $color-white;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+div.footer p {
+    float: right;
+    margin-right: 16px;
+}
