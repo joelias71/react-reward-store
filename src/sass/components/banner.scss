@@ -1,0 +1,13 @@
+div.banner {
+    width: 100%;
+    background: url("https://raw.githubusercontent.com/joelias71/react-reward-store/master/public/img/header-x1.png") center center;
+    height: 50vh;
+    position: relative;
+}
+
+div.banner > h1 {
+    color: $color-white;
+    padding-top: 40vh;
+    font-size: 2.5em;
+    padding-left: 50px;
+}
