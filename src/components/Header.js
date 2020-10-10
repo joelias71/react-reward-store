@@ -1,13 +1,19 @@
 import React from 'react'
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import { Button } from '@material-ui/core'
 
 function Header() {
     return (
         <div className='header'>
-            <label>Julia Coi</label>
-            <div className='header__widget'>
-                <label>600</label>
-                <AttachMoneyIcon />
+            <Button>
+                Agregar Monedas
+            </Button>
+            <div className='header__user'>
+                <label>Julia Coi</label>
+                <div className='header__user__widget'>
+                    <label>600</label>
+                    <AttachMoneyIcon />
+                </div>
             </div>
         </div>
     )
