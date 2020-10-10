@@ -1,0 +1,40 @@
+div.header {
+    width: 100%;
+    display: block;
+    background-color: $color-white;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    color: $color-black;
+    justify-content: flex-end;
+}
+
+div.header__widget {
+    background-color: $color-gray;
+    border: 1px solid $color-gray;
+    color: $color-black;
+    border-radius: 999px;
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0.2rem 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+div.header > label {
+    font-size: 1.8em;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.header__widget > label {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.header__widget > svg {
+    position:relative;
+    top: calc(50% - 20px);
+    color: $color-yellow;
+}
