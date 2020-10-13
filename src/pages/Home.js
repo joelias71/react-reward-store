@@ -1,21 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
-import axios from '../data/axios'
+import ProductList from '../components/ProductList'
 
 function Home() {
-    
-    useEffect(() => {
-        axios.get('products')
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
-    })
 
     return (
         <main>
             <Header />
             <Banner />
+            <ProductList />
             <Footer />
         </main>
     )

@@ -11,7 +11,7 @@ function Header() {
             <div className='header__user'>
                 <label>Julia Coi</label>
                 <div className='header__user__widget'>
-                    <label>600</label>
+                    <label>6000</label>
                     <AttachMoneyIcon />
                 </div>
             </div>

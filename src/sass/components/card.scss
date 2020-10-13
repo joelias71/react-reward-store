@@ -1,0 +1,30 @@
+div.card {
+    background-color: $color-white;
+    cursor: pointer;
+    padding: 20px;
+    transition: transform 100ms;
+    margin: 10px;
+}
+
+div.card > hr {
+    /*border-top: 1px solid $color-gray;*/
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: $color-gray;
+    background-image: linear-gradient(to right, $color-light-gray, $color-gray, $color-light-gray);
+}
+
+div.card > img {
+    object-fit: contain;
+    width: 300px;
+}
+
+div.card > p.card__category {
+    font-size: 0.8em;
+    color: $color-gray;
+}
+
+div.card > p.card__name {
+    color: $color-dark;
+}
