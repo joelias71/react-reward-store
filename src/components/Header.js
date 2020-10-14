@@ -1,6 +1,7 @@
 import React from 'react'
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import { Button } from '@material-ui/core'
+import { amountFormat } from '../util/format'
 
 function Header() {
     return (
@@ -11,7 +12,7 @@ function Header() {
             <div className='header__user'>
                 <label>Julia Coi</label>
                 <div className='header__user__widget'>
-                    <label>6000</label>
+                    <label>{amountFormat(500)}</label>
                     <AttachMoneyIcon />
                 </div>
             </div>

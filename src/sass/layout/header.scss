@@ -14,8 +14,9 @@ div.header > button {
     background-color: $color-blue-dark;
     border-radius: 999px;
     color: $color-white;
-    padding: 1rem;
+    padding: 0.5rem 2rem;
     margin-left: 1rem;
+    text-transform: inherit;
 }
 
 div.header > button:hover{

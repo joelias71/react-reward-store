@@ -2,7 +2,6 @@ div.card {
     background-color: $color-white;
     cursor: pointer;
     margin: 10px;
-    transition: transform 0.8s;
 }
 
 div.card__inner {
@@ -13,6 +12,32 @@ div.card__inner {
 
 div.card__inner_normal {
     padding: 20px;
+
+    div.card__inner_normal__missing {
+        background-color: hsla(0, 0%, 20%, .7);
+        color:$color-white;
+        border-radius: 999px;
+        padding: 0.4rem 1rem;
+        position: absolute;
+        right: 0;
+        margin: 0 1rem;
+
+        svg {
+            color: $color-yellow;
+            vertical-align: middle;
+        }
+    }
+
+    div.card__inner_normal__shop {
+        position: absolute;
+        right: 0;
+        margin: 0 1rem;
+
+        svg {
+            color: $color-blue;
+            font-size: 2em;
+        }
+    }
 }
 
 div.card__inner_normal > hr {
@@ -25,7 +50,7 @@ div.card__inner_normal > hr {
 
 div.card__inner_normal > img {
     object-fit: contain;
-    width: 380px;
+    width: 350px;
 }
 
 div.card__inner_normal > p.card__category {
@@ -50,4 +75,42 @@ div.card__inner_hover {
 
 div.card:hover div.card__inner_hover {
     display: block;
+}
+
+div.card__inner_hover {
+    display: none;
+    text-align: center;
+
+    div.card__inner_hover__price {
+        position:absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-size: 4em;
+        }
+
+        svg {
+            font-size: 4em;
+            color: $color-yellow;
+        }
+    }
+
+    button {
+        border-radius: 999px;
+        color: $color-blue;
+        padding: 0.5rem 2rem;
+        background-color: $color-white;
+        top: 80%;
+        transform: translateY(-80%); 
+        text-transform: inherit;       
+    }
+
+    button:hover {
+        background-color: $color-yellow;
+        color: $color-blue-dark;
+    }
 }
