@@ -3,3 +3,9 @@ div.productListContainer {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+div.productPagination {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}

@@ -50,7 +50,7 @@ div.card__inner_normal > hr {
 
 div.card__inner_normal > img {
     object-fit: contain;
-    width: 350px;
+    width: 280px;
 }
 
 div.card__inner_normal > p.card__category {
@@ -111,6 +111,6 @@ div.card__inner_hover {
 
     button:hover {
         background-color: $color-yellow;
-        color: $color-blue-dark;
+        color: $color-dark-gray;
     }
 }
