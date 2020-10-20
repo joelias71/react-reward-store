@@ -7,7 +7,7 @@ function Header() {
     return (
         <div className='header'>
             <Button>
-                Agregar Monedas
+                Add Coins
             </Button>
             <div className='header__user'>
                 <label>Julia Coi</label>

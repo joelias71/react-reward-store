@@ -3,6 +3,7 @@ import axios from '../data/axios'
 import Card from './Card'
 import Pagination from '@material-ui/lab/Pagination'
 import usePagination from './usePagination'
+import { Button } from '@material-ui/core'
 
 function ProductList() {
 
@@ -18,6 +19,15 @@ function ProductList() {
         _DATA.jump(p)
     }
 
+    const productsPerPage = () => {
+
+        if(products.length === 0) return 0
+
+        if(_DATA.maxPage === page) return products.length
+
+        return PER_PAGE * page
+    }
+
 
     useEffect(() => {
         axios.get('products')
@@ -30,6 +40,21 @@ function ProductList() {
 
     return (
         <>
+            <div className='productListHeader' >
+                <div className='productListHeader__filter' >
+                    <p>{`${productsPerPage()} of ${products.length} products | Sort by : `}</p>
+                    <Button>
+                        Most recent
+                    </Button>
+                    <Button>
+                        Lowest price
+                    </Button>
+                    <Button>
+                        Highest price
+                    </Button>
+                </div>
+                <hr/>
+            </div>
             <div className='productListContainer' >
                 { cardProductList }
             </div>

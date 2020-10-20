@@ -1,7 +1,36 @@
+div.productListHeader {
+    padding: 2rem;
+
+    div.productListHeader__filter {
+
+        display: flex;
+        align-items: center;       
+
+        p {
+            color: $color-blue-dark;
+        }
+        
+        button {
+            background-color: $color-gray;
+            border-radius: 999px;
+            color: $color-white;
+            padding: 0.5rem 2rem;
+            margin-left: 1rem;
+            text-transform: inherit;
+        }
+
+        button:hover {
+            background-color: $color-blue-dark;
+        }
+    }
+
+}
+
 div.productListContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 30vh;
 }
 
 div.productPagination {
