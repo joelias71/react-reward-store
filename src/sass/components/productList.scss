@@ -3,8 +3,18 @@ div.productListHeader {
 
     div.productListHeader__filter {
 
-        display: flex;
-        align-items: center;       
+        @media screen and (max-width: 800px) {
+            display: block;
+
+            button {
+                margin-top: 1rem;
+            }
+        }
+
+        @media screen and (min-width: 801px) {
+            display: flex;
+            align-items: center;
+        }       
 
         p {
             color: $color-blue-dark;
@@ -24,6 +34,9 @@ div.productListHeader {
         }
     }
 
+    hr {
+        margin-top: 1rem;
+    }
 }
 
 div.productListContainer {

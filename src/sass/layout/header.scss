@@ -8,6 +8,16 @@ div.header {
     justify-content: right;
     color: $color-black;
     justify-content: space-between;
+
+    .navbar__menu-bars {
+        margin-left: 1rem;
+        color: $color-blue;
+        font-size: 2.5em;
+    }
+
+    .navbar__menu-bars:hover {
+        color: $color-blue-dark;
+    }
 }
 
 div.header > button {
@@ -43,15 +53,54 @@ div.header__user > label {
     font-size: 1.8em;
     line-height: 3rem;
     margin-right: 1rem;
+
+    @media screen and (max-width: 400px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 401px) {
+        display: inline-flex;
+    }
 }
 
 .header__user__widget > label {
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.5em; 
 }
 
 .header__user__widget > svg {
     position:relative;
     top: calc(50% - 20px);
     color: $color-yellow;
+}
+
+div.header__shopping_cart {
+    border-radius: 999px;
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0.2rem 1rem;
+    color: $color-blue;
+    cursor: pointer;
+}
+
+div.header__shopping_cart:hover {
+    color: $color-blue-dark;
+}
+
+div.header__shopping_cart > label{
+    position: absolute;
+    background-color: $color-white;
+    padding: 0 0.3rem;
+    top: 0.4rem;
+    border-radius: 999px;
+    z-index: 1;
+    line-height: 20px;
+    right: 2.5rem;
+    font-size: 0.8em;
+}
+
+div.header__shopping_cart > svg {
+    position:relative;
+    top: calc(50% - 26px);
+    font-size: 3em;
 }
