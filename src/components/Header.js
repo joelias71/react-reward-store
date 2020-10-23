@@ -20,39 +20,45 @@ function Header() {
                     <MenuIcon className='navbar__menu-bars' onClick={showSidebar} />
                 </Link>
                 <div className='header__user'>
-                    <label>Julia Coi</label>
-                    <div className='header__user__widget'>
-                        <label>{amountFormat(500)}</label>
-                        <AttachMoneyIcon />
-                    </div>
                     <div className='header__shopping_cart'>
                         <label>0</label>
                         <ShoppingCartIcon />
                     </div>
                 </div>
             </div>
-            {/*<nav className={sidebar ? 'navbar-menu active' : 'navbar-menu'}>
+            <nav className={sidebar ? 'navbar-menu active' : 'navbar-menu'}>
                 <ul className='navbar-menu__items'>
                     <li className='navbar-menu__items__toggle' >
                         <Link to='#' >
                             <CloseIcon className='navbar-menu__menu-bars' onClick={showSidebar} />
                         </Link>
                     </li>
-                    <li key='electronics' className='navbar-menu__menu-bars' onClick={showSidebar} >
+                    <li className='navbar-menu__user' >
+                        <label>Julia Coi</label>
+                        <div className='navbar-menu__user__widget'>
+                            <label>{amountFormat(500)}</label>
+                            <AttachMoneyIcon />
+                        </div>
+                    </li>
+                    <li key='electronics' className='navbar-text' onClick={showSidebar} >
                         <Link to='/' >
-                            <span>Electronics</span>
+                            Electronics
                         </Link>
                     </li>
-                    <li key='history' className='navbar-menu__menu-bars' onClick={showSidebar} >
+                    <li key='history' className='navbar-text' onClick={showSidebar} >
                         <Link to='/history' >
-                            <span>History</span>
+                            History
+                        </Link>
+                    </li>
+                    <li key='addCoins' className='navbar-text' onClick={showSidebar} >
+                        <Link to='/history' >
+                            <Button>
+                                Add Coins
+                            </Button>
                         </Link>
                     </li>
                 </ul>
-                <Button>
-                    Add Coins
-                </Button>
-            </nav>*/}
+            </nav>
         </>
     )
 }

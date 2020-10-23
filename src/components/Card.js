@@ -7,7 +7,6 @@ import { amountFormat } from '../util/format'
 function Card({ product }) {
 
     const total = 500
-    console.log(product)
 
     const validateMsg = () => {
         if(total < product.cost) {

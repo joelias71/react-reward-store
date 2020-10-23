@@ -20,58 +20,9 @@ div.header {
     }
 }
 
-div.header > button {
-    background-color: $color-blue-dark;
-    border-radius: 999px;
-    color: $color-white;
-    padding: 0.5rem 2rem;
-    margin-left: 1rem;
-    text-transform: inherit;
-}
-
 div.header > button:hover{
     color: $color-black;
     background-color: $color-yellow;
-}
-
-div.header__user {
-    display: flex;
-    margin-right: 1rem;
-}
-
-div.header__user__widget {
-    background-color: $color-background;
-    border: 1px solid $color-background;
-    color: $color-black;
-    border-radius: 999px;
-    line-height: 3rem;
-    height: 3rem;
-    padding: 0.2rem 1rem;
-}
-
-div.header__user > label {
-    font-size: 1.8em;
-    line-height: 3rem;
-    margin-right: 1rem;
-
-    @media screen and (max-width: 400px) {
-        display: none;
-    }
-
-    @media screen and (min-width: 401px) {
-        display: inline-flex;
-    }
-}
-
-.header__user__widget > label {
-    font-weight: 600;
-    font-size: 1.5em; 
-}
-
-.header__user__widget > svg {
-    position:relative;
-    top: calc(50% - 20px);
-    color: $color-yellow;
 }
 
 div.header__shopping_cart {
@@ -95,7 +46,7 @@ div.header__shopping_cart > label{
     border-radius: 999px;
     z-index: 1;
     line-height: 20px;
-    right: 2.5rem;
+    right: 1rem;
     font-size: 0.8em;
 }
 
@@ -103,4 +54,119 @@ div.header__shopping_cart > svg {
     position:relative;
     top: calc(50% - 26px);
     font-size: 3em;
+}
+
+nav.navbar-menu {
+    background-color: $color-blue-dark;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+    color: $color-white;
+    z-index: 2;
+
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 901px) {
+        width: 40%;
+    }
+
+    .navbar-menu__items__toggle > * {
+        color: $color-white;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+        margin-right: 2rem;
+
+        .navbar-menu__menu-bars {
+            margin-left: 2rem;
+            font-size: 2rem;
+            background: none;
+            cursor: pointer;
+        }
+    }
+
+    .navbar-text {
+        height: 60px;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .navbar-text a {
+        text-decoration: none;
+        color: $color-white;
+        font-size: 18px;
+        width: 95%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        border-radius: 4px;
+    }
+
+    .navbar-menu__items {
+        width: 100%;
+
+        .navbar-menu__user {
+
+            display: flex;
+            justify-content: center;
+            margin-right: 1rem;
+            margin-bottom: 2rem;
+
+            .navbar-menu__user__widget {
+                background-color: $color-background;
+                border: 1px solid $color-background;
+                color: $color-black;
+                border-radius: 999px;
+                line-height: 3rem;
+                height: 3rem;
+                padding: 0.2rem 1rem;
+
+                label {
+                    font-weight: 600;
+                    font-size: 1.5em; 
+                }
+    
+                svg {
+                    position:relative;
+                    top: calc(50% - 20px);
+                    color: $color-yellow;
+                }
+            }
+
+            label {
+                font-size: 1.8em;
+                line-height: 3rem;
+                margin-right: 1rem; 
+            }
+        }
+    }
+
+    button {
+        background-color: $color-white;
+        border-radius: 999px;
+        color: $color-blue-dark;
+        text-transform: inherit;
+        font-size: 18px;
+        padding: 0.5rem 2rem;
+    }
+
+    button:hover {
+        background-color: $color-blue;
+        color: $color-white;
+    }
+    
+}
+
+nav.navbar-menu.active {
+    left: 0;
+    transition: 350ms;
 }
