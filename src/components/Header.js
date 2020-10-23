@@ -20,10 +20,12 @@ function Header() {
                     <MenuIcon className='navbar__menu-bars' onClick={showSidebar} />
                 </Link>
                 <div className='header__user'>
-                    <div className='header__shopping_cart'>
-                        <label>0</label>
-                        <ShoppingCartIcon />
-                    </div>
+                    <Link to='/shop' >
+                        <div className='header__shopping_cart'>
+                            <label>0</label>
+                            <ShoppingCartIcon />
+                        </div>
+                    </Link>
                 </div>
             </div>
             <nav className={sidebar ? 'navbar-menu active' : 'navbar-menu'}>
@@ -51,7 +53,7 @@ function Header() {
                         </Link>
                     </li>
                     <li key='addCoins' className='navbar-text' onClick={showSidebar} >
-                        <Link to='/history' >
+                        <Link to='/addCoins' >
                             <Button>
                                 Add Coins
                             </Button>
