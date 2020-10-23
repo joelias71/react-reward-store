@@ -18,22 +18,22 @@ ReactDOM.render(
     <Router>
       <Header />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path='/react-reward-store'>
             <Electronics />
           </Route>
-          <Route path='/history'>
+          <Route path='/react-reward-store/history'>
             <History />
           </Route>
-          <Route path='/addCoins'>
+          <Route path='/react-reward-store/addCoins'>
             <AddCoins />
           </Route>
-          <Route path='/shop'>
+          <Route path='/react-reward-store/shop'>
             <Shop />
           </Route>
-          <Route path='/404' key='fourOhFour'>
+          <Route path='/react-reward-store/404' key='fourOhFour'>
             <FourOhFour />
           </Route>
-          <Redirect to="/404" />
+          <Redirect to="/react-reward-store/404" />
         </Switch>  
       <Footer />
     </Router>

@@ -20,7 +20,7 @@ function Header() {
                     <MenuIcon className='navbar__menu-bars' onClick={showSidebar} />
                 </Link>
                 <div className='header__user'>
-                    <Link to='/shop' >
+                    <Link to='/react-reward-store/shop' >
                         <div className='header__shopping_cart'>
                             <label>0</label>
                             <ShoppingCartIcon />
@@ -43,17 +43,17 @@ function Header() {
                         </div>
                     </li>
                     <li key='electronics' className='navbar-text' onClick={showSidebar} >
-                        <Link to='/' >
+                        <Link to='/react-reward-store' >
                             Electronics
                         </Link>
                     </li>
                     <li key='history' className='navbar-text' onClick={showSidebar} >
-                        <Link to='/history' >
+                        <Link to='/react-reward-store/history' >
                             History
                         </Link>
                     </li>
                     <li key='addCoins' className='navbar-text' onClick={showSidebar} >
-                        <Link to='/addCoins' >
+                        <Link to='/react-reward-store/addCoins' >
                             <Button>
                                 Add Coins
                             </Button>
