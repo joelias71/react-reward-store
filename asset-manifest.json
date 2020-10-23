@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-reward-store/static/css/main.1b16f8f2.chunk.css",
-    "main.js": "/react-reward-store/static/js/main.b5355cad.chunk.js",
-    "main.js.map": "/react-reward-store/static/js/main.b5355cad.chunk.js.map",
+    "main.js": "/react-reward-store/static/js/main.ecfc3770.chunk.js",
+    "main.js.map": "/react-reward-store/static/js/main.ecfc3770.chunk.js.map",
     "runtime-main.js": "/react-reward-store/static/js/runtime-main.b9c685af.js",
     "runtime-main.js.map": "/react-reward-store/static/js/runtime-main.b9c685af.js.map",
     "static/js/2.d332c55f.chunk.js": "/react-reward-store/static/js/2.d332c55f.chunk.js",
     "static/js/2.d332c55f.chunk.js.map": "/react-reward-store/static/js/2.d332c55f.chunk.js.map",
     "index.html": "/react-reward-store/index.html",
-    "precache-manifest.dfa465f70d2e81db91f4d13d524ac087.js": "/react-reward-store/precache-manifest.dfa465f70d2e81db91f4d13d524ac087.js",
+    "precache-manifest.48c9f3b764d4f1351c5e6b480bb139af.js": "/react-reward-store/precache-manifest.48c9f3b764d4f1351c5e6b480bb139af.js",
     "service-worker.js": "/react-reward-store/service-worker.js",
     "static/css/main.1b16f8f2.chunk.css.map": "/react-reward-store/static/css/main.1b16f8f2.chunk.css.map",
     "static/js/2.d332c55f.chunk.js.LICENSE.txt": "/react-reward-store/static/js/2.d332c55f.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b9c685af.js",
     "static/js/2.d332c55f.chunk.js",
     "static/css/main.1b16f8f2.chunk.css",
-    "static/js/main.b5355cad.chunk.js"
+    "static/js/main.ecfc3770.chunk.js"
   ]
 }
