@@ -1,0 +1,32 @@
+div.fourOhFour {
+
+    background-color: $color-white;
+    padding: 2rem 4rem;
+    text-align: center;
+
+    > * {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    button {
+        background-color: $color-blue;
+        color: $color-white;
+        text-transform: inherit;
+        border-radius: 999px;
+        font-size: 18px;
+        padding: 0.5rem 2rem;
+    }
+
+    button:hover {
+        background-color: $color-blue-dark;
+    }
+}

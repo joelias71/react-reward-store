@@ -1,0 +1,11 @@
+div.radioBtn {
+    background-color: $color-light-gray;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    input {
+        cursor: pointer;
+    }
+}
