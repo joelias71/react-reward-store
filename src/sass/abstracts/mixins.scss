@@ -13,13 +13,7 @@
 }
 
 @mixin flexbox($display, $align, $justify) {
-    @if $display {
-        display: $display;
-    }
-    @if $align {
-        align-items: $align;
-    }
-    @if $justify {
-        justify-content: $justify;
-    }
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
 }

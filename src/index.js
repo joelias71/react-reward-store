@@ -6,7 +6,6 @@ import Electronics from './pages/Electronics'
 import FourOhFour from './pages/FourOhFour'
 import AddCoins from './pages/AddCoins'
 import History from './pages/History'
-import Shop from './pages/Shop'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -27,9 +26,9 @@ ReactDOM.render(
           <Route path='/react-reward-store/addCoins'>
             <AddCoins />
           </Route>
-          <Route path='/react-reward-store/shop'>
+          {/*<Route path='/react-reward-store/shop'>
             <Shop />
-          </Route>
+          </Route>*/}
           <Route path='/react-reward-store/404' key='fourOhFour'>
             <FourOhFour />
           </Route>

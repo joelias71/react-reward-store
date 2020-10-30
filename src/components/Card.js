@@ -11,7 +11,7 @@ function Card({ product }) {
     const validateMsg = () => {
         if(total < product.cost) {
             return( <div className='card__inner_normal__missing'>
-                        <label>{`Te faltan ${amountFormat(product.cost-total)}`}</label>
+                        <label>{`You need ${amountFormat(product.cost-total)}`}</label>
                         <AttachMoneyIcon />
                     </div> )
         } else {
@@ -31,14 +31,14 @@ function Card({ product }) {
                     <img src={product.img.url} alt={product.name} />
                     <hr />
                     <p className='card__category' >{product.category}</p>
-                    <p className='p.card__name' >{product.name}</p>
+                    <p className='card__name' >{product.name}</p>
                 </div>
                 <div className='card__inner_hover'>
                     <div className='card__inner_hover__price' >
                         <p>{amountFormat(product.cost)}</p>
                         <AttachMoneyIcon />
                     </div>
-                    { (total >= product.cost) && <Button>Agregar al carrito</Button> }
+                    { (total >= product.cost) && <Button>Redeem now</Button> }
                 </div>
             </div>
         </div>

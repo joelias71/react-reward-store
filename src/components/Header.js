@@ -19,12 +19,12 @@ function Header() {
                 <Link to='#' >
                     <MenuIcon className='navbar__menu-bars' onClick={showSidebar} />
                 </Link>
-                <Link to='/react-reward-store/shop' >
+                {/*<Link to='/react-reward-store/shop' >
                     <div className='header__shopping_cart'>
                         <label>0</label>
                         <ShoppingCartIcon />
                     </div>
-                </Link>
+                </Link>*/}
             </div>
             <nav className={sidebar ? 'navbar-menu active' : 'navbar-menu'}>
                 <ul className='navbar-menu__items'>
