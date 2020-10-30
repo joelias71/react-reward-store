@@ -2,117 +2,106 @@ div.card {
     background-color: $color-white;
     cursor: pointer;
     margin: 10px;
-}
 
-div.card__inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+    div.card__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
 
-div.card__inner_normal {
-    padding: 20px;
-
-    div.card__inner_normal__missing {
-        background-color: hsla(0, 0%, 20%, .7);
-        color:$color-white;
-        border-radius: 999px;
-        padding: 0.4rem 1rem;
-        position: absolute;
-        right: 0;
-        margin: 0 1rem;
-        height: 1.5rem;
-        line-height: 1.5rem;
-
-        svg {
-            color: $color-yellow;
-            vertical-align: middle;
-        }
-    }
-
-    div.card__inner_normal__shop {
-        position: absolute;
-        right: 0;
-        margin: 0 1rem;
-
-        svg {
-            color: $color-blue;
-            font-size: 2em;
-        }
-    }
-}
-
-div.card__inner_normal > hr {
-    width: 90%;
-    border: 0;
-    height: 1px;
-    background: $color-gray;
-    background-image: linear-gradient(to right, $color-light-gray, $color-gray, $color-light-gray);
-}
-
-div.card__inner_normal > img {
-    object-fit: contain;
-    width: 280px;
-}
-
-div.card__inner_normal > p.card__category {
-    font-size: 0.8em;
-    color: $color-gray;
-}
-
-div.card__inner_normal > p.card__name {
-    color: $color-dark;
-}
-
-div.card__inner_hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: hsla(198, 84%, 52%, 0.8);
-    top:0px;
-    left:0px;
-    display: none;
-    color: $color-white;
-}
-
-div.card:hover div.card__inner_hover {
-    display: block;
-}
-
-div.card__inner_hover {
-    display: none;
-    text-align: center;
-
-    div.card__inner_hover__price {
-        position:absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        p {
-            font-size: 4em;
+        &:hover div.card__inner_hover {
+            display: block;
         }
 
-        svg {
-            font-size: 4em;
-            color: $color-yellow;
+        div.card__inner_normal {
+            padding: 20px;
+
+            > hr {
+                width: 90%;
+                border: 0;
+                height: 1px;
+                background: $color-gray;
+                background-image: linear-gradient(to right, $color-light-gray, $color-gray, $color-light-gray);
+            }
+
+            > img {
+                object-fit: contain;
+                width: 280px;
+            }
+
+            > p.card__category {
+                font-size: 0.8em;
+                color: $color-gray;
+            }
+            
+            > p.card__name {
+                color: $color-dark;
+            }
+        
+            div.card__inner_normal__missing {
+                background-color: hsla(0, 0%, 20%, .7);
+                color:$color-white;
+                border-radius: 999px;
+                padding: 0.4rem 1rem;
+                position: absolute;
+                right: 0;
+                margin: 0 1rem;
+                @include vertical-align(1.5rem); 
+        
+                svg {
+                    color: $color-yellow;
+                    vertical-align: middle;
+                }
+            }
+        
+            div.card__inner_normal__shop {
+                position: absolute;
+                right: 0;
+                margin: 0 1rem;
+        
+                svg {
+                    color: $color-blue;
+                    font-size: 2em;
+                }
+            }
         }
-    }
 
-    button {
-        border-radius: 999px;
-        color: $color-blue;
-        padding: 0.5rem 2rem;
-        background-color: $color-white;
-        top: 80%;
-        transform: translateY(-80%); 
-        text-transform: inherit;       
-    }
+        div.card__inner_hover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: hsla(198, 84%, 52%, 0.8);
+            top:0px;
+            left:0px;
+            display: none;
+            color: $color-white;
+            text-align: center;
 
-    button:hover {
-        background-color: $color-dark-gray;
-        color: $color-white;
+            div.card__inner_hover__price {
+                position:absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                margin: auto;
+                @include flexbox(flex, center, center);
+        
+                p {
+                    font-size: 4em;
+                }
+        
+                svg {
+                    font-size: 4em;
+                    color: $color-yellow;
+                }
+            }
+        
+            button {
+                top: 80%;
+                transform: translateY(-80%);
+                @include btn($color-white, $color-blue);  
+                
+                &:hover {
+                    background-color: $color-dark-gray;
+                    color: $color-white;
+                }
+            }
+        }
     }
 }

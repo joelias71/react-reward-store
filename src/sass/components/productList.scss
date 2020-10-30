@@ -21,22 +21,19 @@ div.productListHeader {
         }
         
         button {
-            background-color: $color-gray;
-            border-radius: 999px;
-            color: $color-white;
-            padding: 0.5rem 2rem;
             margin-left: 1rem;
-            text-transform: inherit;
-        }
-
-        button:hover {
-            background-color: $color-blue-dark;
+            @include btn($color-gray, $color-white);  
+                
+            &:hover {
+                background-color: $color-blue-dark;
+            }
         }
     }
 
     hr {
         margin-top: 1rem;
     }
+
 }
 
 div.productListContainer {

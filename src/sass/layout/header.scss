@@ -1,59 +1,49 @@
 div.header {
     width: 100%;
-    display: block;
     background-color: $color-white;
     height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: right;
     color: $color-black;
-    justify-content: space-between;
+    @include flexbox(flex, center, space-between);
 
     .navbar__menu-bars {
         margin-left: 1rem;
         color: $color-blue;
         font-size: 2.5em;
+
+        &:hover {
+            color: $color-blue-dark;
+        }
     }
 
-    .navbar__menu-bars:hover {
-        color: $color-blue-dark;
+    div.header__shopping_cart {
+        border-radius: 999px;
+        @include vertical-align(3rem);
+        padding: 0.2rem 1rem;
+        color: $color-blue;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-blue-dark;
+        }
+
+        > label{
+            position: absolute;
+            background-color: $color-white;
+            padding: 0 0.3rem;
+            top: 0.4rem;
+            border-radius: 999px;
+            z-index: 1;
+            line-height: 20px;
+            right: 1rem;
+            font-size: 0.8em;
+        }
+
+        > svg {
+            position:relative;
+            top: calc(50% - 26px);
+            font-size: 3em;
+        }
     }
-}
-
-div.header > button:hover{
-    color: $color-black;
-    background-color: $color-yellow;
-}
-
-div.header__shopping_cart {
-    border-radius: 999px;
-    line-height: 3rem;
-    height: 3rem;
-    padding: 0.2rem 1rem;
-    color: $color-blue;
-    cursor: pointer;
-}
-
-div.header__shopping_cart:hover {
-    color: $color-blue-dark;
-}
-
-div.header__shopping_cart > label{
-    position: absolute;
-    background-color: $color-white;
-    padding: 0 0.3rem;
-    top: 0.4rem;
-    border-radius: 999px;
-    z-index: 1;
-    line-height: 20px;
-    right: 1rem;
-    font-size: 0.8em;
-}
-
-div.header__shopping_cart > svg {
-    position:relative;
-    top: calc(50% - 26px);
-    font-size: 3em;
 }
 
 nav.navbar-menu {
@@ -67,6 +57,16 @@ nav.navbar-menu {
     transition: 850ms;
     color: $color-white;
     z-index: 2;
+
+    &.active {
+        left: 0;
+        transition: 350ms;
+    }
+
+    &:hover {
+        background-color: $color-dark-gray;
+        color: $color-white;
+    }
 
     @media screen and (max-width: 900px) {
         width: 100%;
@@ -104,9 +104,7 @@ nav.navbar-menu {
         font-size: 18px;
         width: 95%;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexbox(flex, center, center);
         padding: 0 16px;
         border-radius: 4px;
     }
@@ -126,8 +124,7 @@ nav.navbar-menu {
                 border: 1px solid $color-background;
                 color: $color-black;
                 border-radius: 999px;
-                line-height: 3rem;
-                height: 3rem;
+                @include vertical-align(3rem);
                 padding: 0.2rem 1rem;
 
                 label {
@@ -151,22 +148,11 @@ nav.navbar-menu {
     }
 
     button {
-        background-color: $color-white;
-        border-radius: 999px;
-        color: $color-blue-dark;
-        text-transform: inherit;
-        font-size: 18px;
-        padding: 0.5rem 2rem;
-    }
+        @include btn($color-white, $color-blue-dark);
 
-    button:hover {
-        background-color: $color-blue;
-        color: $color-white;
-    }
-    
-}
-
-nav.navbar-menu.active {
-    left: 0;
-    transition: 350ms;
+        &:hover {
+            background-color: $color-blue;
+            color: $color-white;
+        }
+    }    
 }

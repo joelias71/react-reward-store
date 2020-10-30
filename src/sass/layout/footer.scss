@@ -4,11 +4,10 @@ div.footer {
     background-color: $color-blue-dark;
     color: $color-white;
     text-align: center;
-    height: 4rem;
-    line-height: 4rem;
-}
+    @include vertical-align(4rem);
 
-div.footer p {
-    float: right;
-    margin-right: 16px;
+    p {
+        float: right;
+        margin-right: 16px;
+    }
 }

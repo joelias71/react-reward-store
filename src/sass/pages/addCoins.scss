@@ -1,9 +1,7 @@
 div.storeContainer {
-    display: flex;
+    @include flexbox(flex, center, center);
     min-height: calc(100vh - 9rem);
     width: 100%;
-    align-items: center; 
-    justify-content: center;
 
     div.addCoinsContainer__Card {
         background-color: $color-white;
@@ -24,16 +22,11 @@ div.storeContainer {
         }
 
         button {
-            background-color: $color-blue;
-            color: $color-white;
-            text-transform: inherit;
-            border-radius: 999px;
-            font-size: 18px;
-            padding: 0.5rem 2rem;
-        }
+            @include btn($color-blue, $color-white);
 
-        button:hover {
-            background-color: $color-blue-dark;
+            &:hover {
+                background-color: $color-blue-dark;
+            }
         }
     }
 }

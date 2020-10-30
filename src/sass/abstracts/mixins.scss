@@ -1,0 +1,25 @@
+@mixin btn($bg-color, $color) {
+    background-color: $bg-color;
+    color: $color;
+    text-transform: inherit;
+    border-radius: 999px;
+    font-size: 18px;
+    padding: 0.5rem 2rem;
+}
+
+@mixin vertical-align($size) {
+    height: $size;
+    line-height: $size;
+}
+
+@mixin flexbox($display, $align, $justify) {
+    @if $display {
+        display: $display;
+    }
+    @if $align {
+        align-items: $align;
+    }
+    @if $justify {
+        justify-content: $justify;
+    }
+}
