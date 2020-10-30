@@ -7,7 +7,7 @@ div.banner {
     }
 
     &.shop {
-        @include bg-image("https://www.telemundo.com/sites/nbcutelemundo/files/images/article/cover/2016/08/12/utiles-en-carrito-de-compras.jpg");
+        @include bg-image("https://raw.githubusercontent.com/joelias71/react-reward-store/master/public/img/shopping.jpg");
     }
 
     > h1 {

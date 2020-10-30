@@ -1,0 +1,30 @@
+div.historyCard {
+    background-color: $color-white;
+    padding: 1rem;
+    margin: 10px;
+
+    > img {
+        object-fit: contain;
+        width: 280px;
+    }
+
+    div.historyCard__info {
+
+        .historyCard__info__name {
+            color: $color-dark;
+        }
+
+        .historyCard__info__category {
+            font-size: 0.8em;
+            color: $color-gray;
+            margin-bottom: 1rem;
+        }
+
+        .historyCard__info__date {
+            color: $color-dark;
+            background-color: $color-yellow;
+            padding: 1rem;
+            border-radius: 999px;
+        }
+    }
+}

@@ -45,7 +45,6 @@ function ProductList({ CardComponent, endpoint }) {
     useEffect(() => {
         axios.get(endpoint)
             .then(response => {
-                console.log(response.data)
                 setProducts(response.data) 
             }).catch(error => console.log(error))
     },[endpoint])
