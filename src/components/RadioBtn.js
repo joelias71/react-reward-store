@@ -6,7 +6,7 @@ function RadioBtn({ text, value, group }) {
             <label>
                 {text}
                 <input type="radio" value={value} name={group} />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
             </label>
         </div>
     )

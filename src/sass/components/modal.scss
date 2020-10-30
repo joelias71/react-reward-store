@@ -1,0 +1,61 @@
+div.overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,.7);
+}
+
+div.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    z-index: 1;
+
+    .modal__header {
+        padding: 1rem;
+        background-color: $color-blue;
+        color: $color-white;
+        font-size: 1.7em;
+
+        > svg {
+            cursor: pointer;
+            float: right;
+
+            &:hover {
+                color: $color-blue-dark;
+            }
+        }
+    }
+
+    .modal__content {
+        padding: 3rem;
+
+        p {
+            font-size: 1.3em;
+        }
+    }
+
+    .modal__btns {
+        display: flex;
+        padding: 1rem;
+        justify-content: flex-end;
+
+        button:first-child {
+            @include btn($color-blue, $color-white);
+            margin-right: 10px;
+
+            &:hover {
+                background-color: $color-blue-dark;
+            }
+        }
+
+        button:last-child {
+            @include btn($color-light-gray, $color-blue-dark);
+
+            &:hover {
+                background-color: $color-gray;
+            }
+        }
+    }
+}

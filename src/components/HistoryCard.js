@@ -8,8 +8,6 @@ function HistoryCard({ product }) {
      * endpoint. Temporaly fixed doing this replace */
     const imgUrl = product.img.url.replace('aerolab-challenge.now.sh','coding-challenge-api.aerolab.co')
 
-    console.log(product.createDate, getTextDate(product.createDate))
-
     return (
         <div className='historyCard'>
             <img src={imgUrl} alt={product.name} />

@@ -4,7 +4,7 @@ import LocalMallIcon from '@material-ui/icons/LocalMall';
 import { Button } from '@material-ui/core'
 import { amountFormat } from '../util/format'
 
-function Card({ product }) {
+function Card({ product, redeemModal, setRedeemProduct }) {
 
     const total = 500
 
@@ -23,6 +23,11 @@ function Card({ product }) {
         }
     }
 
+    const redeem = () => {
+        redeemModal()
+        setRedeemProduct(product)
+    }
+
     return (
         <div className='card'>
             <div className='card__inner'>
@@ -38,7 +43,7 @@ function Card({ product }) {
                         <p>{amountFormat(product.cost)}</p>
                         <AttachMoneyIcon />
                     </div>
-                    { (total >= product.cost) && <Button>Redeem now</Button> }
+                    { (total >= product.cost) && <Button onClick={()=> redeem()}>Redeem now</Button> }
                 </div>
             </div>
         </div>
