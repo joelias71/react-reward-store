@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Banner() {
+function Banner({ text, bgImage }) {
     return (
-        <div className='banner'>
-            <h1>Electronics</h1>
+        <div className={`banner ${bgImage}`}>
+            <h1>{ text }</h1>
         </div>
     )
 }

@@ -3,7 +3,7 @@ div.productListHeader {
 
     div.productListHeader__filter {
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 900px) {
             display: block;
 
             button {
@@ -11,7 +11,7 @@ div.productListHeader {
             }
         }
 
-        @media screen and (min-width: 801px) {
+        @media screen and (min-width: 901px) {
             display: flex;
             align-items: center;
         }       
@@ -25,6 +25,10 @@ div.productListHeader {
             @include btn($color-gray, $color-white);  
                 
             &:hover {
+                background-color: $color-blue-dark;
+            }
+
+            &.active {
                 background-color: $color-blue-dark;
             }
         }

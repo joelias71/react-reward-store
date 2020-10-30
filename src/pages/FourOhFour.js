@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 
 function FourOhFour() {
 

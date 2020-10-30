@@ -17,3 +17,9 @@
     align-items: $align;
     justify-content: $justify;
 }
+
+@mixin bg-image($img) {
+    background: url($img) right center;
+    position: relative;
+    background-size: cover;
+}

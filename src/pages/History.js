@@ -1,12 +1,16 @@
 import React from 'react'
+import ProductList from '../components/ProductList'
+import HistoryCard from '../components/HistoryCard'
+import Banner from '../components/Banner'
 
-function Home() {
+function History() {
 
     return (
         <main>
-            <h1>History</h1>
+            <Banner text={'History'} bgImage={'shop'} />
+            <ProductList CardComponent={HistoryCard} endpoint={'user/history'} />
         </main>
     )
 }
 
-export default Home
+export default History

@@ -26,9 +26,6 @@ ReactDOM.render(
           <Route path='/react-reward-store/addCoins'>
             <AddCoins />
           </Route>
-          {/*<Route path='/react-reward-store/shop'>
-            <Shop />
-          </Route>*/}
           <Route path='/react-reward-store/404' key='fourOhFour'>
             <FourOhFour />
           </Route>

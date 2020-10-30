@@ -3,8 +3,11 @@ import React from 'react'
 function RadioBtn({ text, value, group }) {
     return (
         <div className='radioBtn' >
-            <label>{text}</label>
-            <input type="radio" value={value} name={group} />
+            <label>
+                {text}
+                <input type="radio" value={value} name={group} />
+                <span class="checkmark"></span>
+            </label>
         </div>
     )
 }
