@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import Pagination from '@material-ui/lab/Pagination'
 import usePagination from './usePagination'
 import Modal from './Modal'
-import Filter from './Filter'
+import { Button } from '@material-ui/core'
 import RedeemProduct from './RedeemProduct'
 import ReactLoading from 'react-loading'
 
-function ProductList({ CardComponent, endpoint, fetchData, products, loading, error }) {
+function ProductList({ CardComponent, endpoint, fetchData, products, loading, recentFilter, lowFilter, highFilter, orderDataByDate, orderDataByLowPrice, orderDataByHighPrice }) {
 
     const [redeemProduct, setRedeemProduct] =useState({})
     const [page, setPage] = useState(1)
@@ -18,6 +18,12 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, er
     const handleChange = (e, p) => {
         setPage(p)
         _DATA.jump(p)
+    }
+
+    const productsPerPage = () => {
+        if(products.length === 0) return 0
+        if(_DATA.maxPage === page) return products.length
+        return PER_PAGE * page
     }
 
     useEffect(() => {
@@ -41,7 +47,18 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, er
     return (
         <>
             <div className='productListHeader' >
-                <Filter data={_DATA} page={page} perPage={PER_PAGE} products={products} />
+                <div className='productListHeader__filter' >
+                    <p>{`${productsPerPage()} of ${products.length} products | Sort by : `}</p>
+                    {endpoint==='user/history' && <Button className={recentFilter ? 'active' : ''} onClick={() => orderDataByDate(products)} >
+                        Most recent
+                    </Button>}
+                    <Button className={lowFilter ? 'active' : ''} onClick={() => orderDataByLowPrice(products)} >
+                        Lowest price
+                    </Button>
+                    <Button className={highFilter ? 'active' : ''} onClick={() => orderDataByHighPrice(products)} >
+                        Highest price
+                    </Button>
+                </div>
                 <hr/>
             </div>
             <div className='productListContainer' >
