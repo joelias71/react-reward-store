@@ -49,13 +49,13 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, re
             <div className='productListHeader' >
                 <div className='productListHeader__filter' >
                     <p>{`${productsPerPage()} of ${products.length} products | Sort by : `}</p>
-                    {endpoint==='user/history' && <Button className={recentFilter ? 'active' : ''} onClick={() => orderDataByDate(products)} >
+                    {endpoint==='user/history' && <Button className={recentFilter ? 'active' : ''} onClick={() => orderDataByDate({data: products, page: endpoint})} >
                         Most recent
                     </Button>}
-                    <Button className={lowFilter ? 'active' : ''} onClick={() => orderDataByLowPrice(products)} >
+                    <Button className={lowFilter ? 'active' : ''} onClick={() => orderDataByLowPrice({data: products, page: endpoint})} >
                         Lowest price
                     </Button>
-                    <Button className={highFilter ? 'active' : ''} onClick={() => orderDataByHighPrice(products)} >
+                    <Button className={highFilter ? 'active' : ''} onClick={() => orderDataByHighPrice({data: products, page: endpoint})} >
                         Highest price
                     </Button>
                 </div>

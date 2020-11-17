@@ -12,7 +12,7 @@ export const CLEANUP = 'CLEANUP'
 
 export const fetchData = uri => {
     return dispatch => {
-        dispatch(loading())
+        dispatch(loading(uri))
         axios.get(uri)
         .then(response => dispatch(setDataFromService(response)))
         .catch(error => dispatch(setErrorFromService(error)))
