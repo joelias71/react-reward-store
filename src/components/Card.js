@@ -4,9 +4,7 @@ import LocalMallIcon from '@material-ui/icons/LocalMall';
 import { Button } from '@material-ui/core'
 import { amountFormat } from '../util/format'
 
-function Card({ product, redeemModal, setRedeemProduct }) {
-
-    const total = 500
+function Card({ product, redeemModal, setRedeemProduct, total }) {
 
     const validateMsg = () => {
         if(total < product.cost) {

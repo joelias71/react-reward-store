@@ -10,7 +10,7 @@ import AddCoins from './pages/AddCoins'
 
 import HeaderContainer from './containers/HeaderContainer'
 import Footer from './components/Footer'
-import Card from './components/Card'
+import CardContainer from './containers/CardContainer'
 import HistoryCard from './components/HistoryCard'
 
 import './sass/main.scss';
@@ -23,7 +23,7 @@ ReactDOM.render(
             <Route exact path='/react-reward-store'>
               <Main text='Electronics'
                 bgImage='electronic'
-                CardComponent={Card}
+                CardComponent={CardContainer}
                 endpoint='products' />
             </Route>
             <Route path='/react-reward-store/history'>

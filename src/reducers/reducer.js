@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { SET_DATA_FROM_SERVICE, SET_ERROR_FROM_SERVICE, LOADING, CLEANUP } from '../actions/actions'
+import { SET_DATA_FROM_SERVICE, SET_ERROR_FROM_SERVICE, LOADING, CLEANUP, SET_USER, SET_USER_ERROR } from '../actions/actions'
 
 const data = (data = { data: [], loading: false }, action) => {
 
@@ -18,6 +18,18 @@ const data = (data = { data: [], loading: false }, action) => {
     return data
 }
 
+const user = ( user = { name:'John Kite', points:0 }, action) => {
+
+    if(action.type === SET_USER) {
+        return { name: action.user.data.name, points: action.user.data.points }
+    }
+
+    if(action.type === SET_USER_ERROR) return user
+
+    return user
+}
+
 export default combineReducers({
-    data
+    data,
+    user
 })

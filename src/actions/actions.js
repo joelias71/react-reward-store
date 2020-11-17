@@ -1,5 +1,7 @@
 import axios from '../data/axios'
 
+export const SET_USER = 'SET_USER'
+export const SET_USER_ERROR = 'SET_USER_ERROR'
 export const SET_ERROR_FROM_SERVICE = 'SET_ERROR_FROM_SERVICE'
 export const SET_DATA_FROM_SERVICE = 'SET_DATA_FROM_SERVICE'
 export const LOADING = 'LOADING'
@@ -11,6 +13,28 @@ export const fetchData = uri => {
         axios.get(uri)
         .then(response => dispatch(setDataFromService(response)))
         .catch(error => dispatch(setErrorFromService(error)))
+    }
+}
+
+export const fetchUser = () => {
+    return dispatch => {
+        axios.get('user/me')
+        .then(response => dispatch(setUser(response)))
+        .catch(error => dispatch(setUserError(error)))
+    }
+}
+
+export const setUser = user => {
+    return {
+        type: SET_USER,
+        user
+    }
+}
+
+export const setUserError = user => {
+    return {
+        type: SET_USER_ERROR,
+        user
     }
 }
 

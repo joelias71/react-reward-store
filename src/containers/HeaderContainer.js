@@ -1,13 +1,21 @@
 import { connect } from 'react-redux'
 import Header from '../components/Header'
-import { cleanup } from '../actions/actions'
-  
+import { cleanup, fetchUser } from '../actions/actions'
+
+const mapStateToProps = ({ user }) => {
+    return {
+        name: user.name,
+        points: user.points
+    }
+}
+
 const mapDispatchToProps = dispatch => ({
-    cleanup: () => dispatch(cleanup())
+    cleanup: () => dispatch(cleanup()),
+    fetchUser: () => dispatch(fetchUser())
 })
   
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(Header)
 

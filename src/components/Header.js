@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
 import { amountFormat } from '../util/format'
 import { Link } from 'react-router-dom'
@@ -6,7 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { Button } from '@material-ui/core'
 
-function Header({ cleanup }) {
+function Header({ cleanup, fetchUser, name, points }) {
 
     const [sidebar, setSidebar] = useState(false)
 
@@ -15,6 +15,10 @@ function Header({ cleanup }) {
         cleanup()
         showSidebar()
     }
+
+    useEffect(() => {
+        fetchUser()
+    },[fetchUser])
 
     return (
         <>
@@ -31,9 +35,9 @@ function Header({ cleanup }) {
                         </Link>
                     </li>
                     <li className='navbar-menu__user' >
-                        <label>Julia Coi</label>
+                        <label>{name}</label>
                         <div className='navbar-menu__user__widget'>
-                            <label>{amountFormat(500)}</label>
+                            <label>{amountFormat(points)}</label>
                             <AttachMoneyIcon />
                         </div>
                     </li>
