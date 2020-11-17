@@ -4,6 +4,7 @@ import usePagination from './usePagination'
 import Modal from './Modal'
 import Filter from './Filter'
 import RedeemProduct from './RedeemProduct'
+import ReactLoading from 'react-loading'
 
 function ProductList({ CardComponent, endpoint, fetchData, products, loading, error }) {
 
@@ -23,13 +24,19 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, er
         fetchData(endpoint)
     },[fetchData, endpoint])
 
-    const cardProductList = _DATA.currentData().map((prod,index) => {
-        return <CardComponent 
-                    key={index} 
-                    product={prod} 
-                    setRedeemProduct={setRedeemProduct}
-                    redeemModal={() => setIsOpen(true)}/>
-    })
+    const cardProductList = () => {
+        if(loading) {
+            return <ReactLoading type={'spin'} color={'#232f3e'} height={100} width={100} className={'custom_spinner'} />
+        } else {
+            return _DATA.currentData().map((prod,index) => {
+                return <CardComponent 
+                            key={index} 
+                            product={prod} 
+                            setRedeemProduct={setRedeemProduct}
+                            redeemModal={() => setIsOpen(true)}/>
+            })
+        }
+    }
 
     return (
         <>
@@ -38,7 +45,7 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, er
                 <hr/>
             </div>
             <div className='productListContainer' >
-                { cardProductList }
+                { cardProductList() }
             </div>
             <div className='productPagination' >
                 <Pagination 

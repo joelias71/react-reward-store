@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import ProductList from '../components/ProductList'
 import { fetchData} from '../actions/actions'
 
-const mapStateToProps = ({ data }) => {
+const mapStateToProps = ({ data }) => {    
     return {
         products: data.data,
         loading: data.loading,
