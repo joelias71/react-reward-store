@@ -1,4 +1,12 @@
-import { SET_DATA_FROM_SERVICE, SET_ERROR_FROM_SERVICE, ORDER_DATA_BY_DATE, ORDER_DATA_BY_LOW_PRICE, ORDER_DATA_BY_HIGH_PRICE, LOADING, CLEANUP } from '../../actions/actions'
+import { 
+    SET_DATA_FROM_SERVICE, 
+    SET_ERROR_FROM_SERVICE, 
+    ORDER_DATA_BY_DATE, 
+    ORDER_DATA_BY_LOW_PRICE, 
+    ORDER_DATA_BY_HIGH_PRICE, 
+    LOADING, 
+    CLEANUP 
+} from '../../actions/actions'
 
 export const data = (data = { data: [], loading: false, page:'products' }, action) => {
 

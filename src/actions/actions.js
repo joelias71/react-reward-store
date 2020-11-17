@@ -1,6 +1,8 @@
 import axios from '../data/axios'
 
 export const SET_USER = 'SET_USER'
+export const ADD_USER_POINTS = 'ADD_USER_POINTS'
+export const SUBTRACT_USER_POINTS = 'SUBTRACT_USER_POINTS'
 export const SET_USER_ERROR = 'SET_USER_ERROR'
 export const SET_ERROR_FROM_SERVICE = 'SET_ERROR_FROM_SERVICE'
 export const SET_DATA_FROM_SERVICE = 'SET_DATA_FROM_SERVICE'
@@ -30,6 +32,20 @@ export const fetchUser = () => {
 export const setUser = user => {
     return {
         type: SET_USER,
+        user
+    }
+}
+
+export const addUserPoints = user => {
+    return {
+        type: ADD_USER_POINTS,
+        user
+    }
+}
+
+export const subtractUserPoints = user => {
+    return {
+        type: SUBTRACT_USER_POINTS,
         user
     }
 }

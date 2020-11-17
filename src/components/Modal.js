@@ -2,16 +2,34 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import CloseIcon from '@material-ui/icons/Close'
 import { Button } from '@material-ui/core'
+import ReactLoading from 'react-loading'
 
 function Modal({ 
     open, 
     children, 
     onClose, 
     title,
-    approvalBtnTxt 
+    onLoad,
+    approvalBtnTxt,
+    submit
 }) {
 
     if(!open) return null
+
+    const isLoading = () => {
+        if(onLoad) {
+            return <ReactLoading type={'cubes'} color={'#232f3e'} height={80} width={80} />
+        } else {
+            return <>
+                        <Button onClick={submit} >
+                            {approvalBtnTxt? approvalBtnTxt : 'Approve'}
+                        </Button>
+                        <Button onClick={onClose} >
+                            Cancel
+                        </Button>
+                    </>
+        }
+    }
 
     return ReactDOM.createPortal(
         <>
@@ -25,12 +43,7 @@ function Modal({
                     {children}
                 </div>
                 <div className='modal__btns'>
-                    <Button>
-                        {approvalBtnTxt? approvalBtnTxt : 'Approve'}
-                    </Button>
-                    <Button onClick={onClose} >
-                        Cancel
-                    </Button>
+                    { isLoading() }
                 </div>
             </div>
         </>,

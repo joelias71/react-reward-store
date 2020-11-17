@@ -5,12 +5,30 @@ import Modal from './Modal'
 import { Button } from '@material-ui/core'
 import RedeemProduct from './RedeemProduct'
 import ReactLoading from 'react-loading'
+import axios from '../data/axios'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-function ProductList({ CardComponent, endpoint, fetchData, products, loading, recentFilter, lowFilter, highFilter, orderDataByDate, orderDataByLowPrice, orderDataByHighPrice }) {
+toast.configure()
+
+function ProductList({ 
+    CardComponent, 
+    endpoint, 
+    fetchData, 
+    products, 
+    loading, 
+    recentFilter, 
+    lowFilter, 
+    highFilter,
+    subtractUserPoints,
+    orderDataByDate, 
+    orderDataByLowPrice, 
+    orderDataByHighPrice }) {
 
     const [redeemProduct, setRedeemProduct] =useState({})
     const [page, setPage] = useState(1)
     const [isOpen, setIsOpen] = useState(false)
+    const [isModalLoading, setIsModalLoading] = useState(false)
     const PER_PAGE = 12
     const count = Math.ceil(products.length / PER_PAGE)
     const _DATA = usePagination(products, PER_PAGE)
@@ -24,6 +42,20 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, re
         if(products.length === 0) return 0
         if(_DATA.maxPage === page) return products.length
         return PER_PAGE * page
+    }
+
+    const redeem = () => {
+        setIsModalLoading(true)
+        axios.post('redeem',{ productId: redeemProduct._id})
+        .then(response => {
+            setIsModalLoading(false)
+            setIsOpen(false)
+            toast.success(response.data.message)
+            subtractUserPoints(redeemProduct.cost)
+        }).catch(error => {
+            setIsModalLoading(false)
+            toast.error('A problem occur, please contact the administrator')
+        })
     }
 
     useEffect(() => {
@@ -76,7 +108,9 @@ function ProductList({ CardComponent, endpoint, fetchData, products, loading, re
             <Modal 
                 open={isOpen} 
                 onClose={() => setIsOpen(false)}
+                submit={redeem}
                 title='Redeem product'
+                onLoad={isModalLoading}
                 approvalBtnTxt='Redeem' >
                 <RedeemProduct product={redeemProduct} />
             </Modal>

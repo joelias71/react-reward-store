@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ProductList from '../components/ProductList'
-import { fetchData, orderDataByDate, orderDataByLowPrice, orderDataByHighPrice } from '../actions/actions'
+import { fetchData, orderDataByDate, orderDataByLowPrice, orderDataByHighPrice, subtractUserPoints } from '../actions/actions'
 
 const mapStateToProps = ({ data }, ownProps) => {   
 
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
     fetchData: uri => dispatch(fetchData(uri)),
     orderDataByDate: data => dispatch(orderDataByDate(data)),
     orderDataByLowPrice: data => dispatch(orderDataByLowPrice(data)),
-    orderDataByHighPrice: data => dispatch(orderDataByHighPrice(data))
+    orderDataByHighPrice: data => dispatch(orderDataByHighPrice(data)),
+    subtractUserPoints: points => dispatch(subtractUserPoints(points))
 })
   
 export default connect(
