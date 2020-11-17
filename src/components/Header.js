@@ -6,11 +6,15 @@ import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { Button } from '@material-ui/core'
 
-function Header() {
+function Header({ cleanup }) {
 
     const [sidebar, setSidebar] = useState(false)
 
     const showSidebar = () => setSidebar(!sidebar)
+    const clean = () => {
+        cleanup()
+        showSidebar()
+    }
 
     return (
         <>
@@ -33,12 +37,12 @@ function Header() {
                             <AttachMoneyIcon />
                         </div>
                     </li>
-                    <li key='electronics' className='navbar-text' onClick={showSidebar} >
+                    <li key='electronics' className='navbar-text' onClick={clean} >
                         <Link to='/react-reward-store' >
                             Electronics
                         </Link>
                     </li>
-                    <li key='history' className='navbar-text' onClick={showSidebar} >
+                    <li key='history' className='navbar-text' onClick={clean} >
                         <Link to='/react-reward-store/history' >
                             History
                         </Link>

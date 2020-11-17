@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import axios from '../data/axios'
 import Pagination from '@material-ui/lab/Pagination'
 import usePagination from './usePagination'
 import Modal from './Modal'
 import Filter from './Filter'
 import RedeemProduct from './RedeemProduct'
 
-function ProductList({ CardComponent, endpoint }) {
+function ProductList({ CardComponent, endpoint, fetchData, products, loading, error }) {
 
-    const [products, setProducts] = useState([])
     const [redeemProduct, setRedeemProduct] =useState({})
     const [page, setPage] = useState(1)
     const [isOpen, setIsOpen] = useState(false)
@@ -22,11 +20,8 @@ function ProductList({ CardComponent, endpoint }) {
     }
 
     useEffect(() => {
-        axios.get(endpoint)
-            .then(response => {
-                setProducts(response.data) 
-            }).catch(error => console.log(error))
-    },[endpoint])
+        fetchData(endpoint)
+    },[fetchData, endpoint])
 
     const cardProductList = _DATA.currentData().map((prod,index) => {
         return <CardComponent 
