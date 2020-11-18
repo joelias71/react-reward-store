@@ -8,6 +8,11 @@ Application that get news from https://aerolabchallenge.docs.apiary.io/
 - react-dom 16.13.1
 - react-router-dom 5.2.0
 - react-toastify 6.0.8
+- react-loading 2.0.3
+- react-redux 5.1.2
+- react-toastify 6.0.9
+- redux 4.0.5
+- redux-thunk 2.3.0
 - axios 0.20.0
 - @material-ui/core 4.11.0
 - @material-ui/icons 4.9.1
