@@ -6,7 +6,7 @@ import { store } from './store'
 
 import Main from './pages/Main'
 import FourOhFour from './pages/FourOhFour'
-import AddCoins from './pages/AddCoins'
+import AddCoins from './containers/AddCoinsContainer'
 
 import HeaderContainer from './containers/HeaderContainer'
 import Footer from './components/Footer'
